@@ -4,8 +4,98 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body{
+            margin: 0px;
+            padding: 0px;
+            display: flex;
+            height: 100vh;
+            align-items: end;
+            justify-content: center;
+            background-color: rgb(240, 239, 239);
+        }
+        .calculator{
+            background-color: white;
+            border-radius: 30px;
+            padding: 5% 3%;
+            margin: auto;
+            width: 30%;
+        }.row{
+            gap: 10px;
+            display: flex;
+            justify-content: space-around;
+        }
+        .row button{
+            background-color: rgb(246, 245, 245);
+            border-radius: 100px;
+            margin-bottom: 20px;
+            font-size: 22px;
+            cursor: pointer;
+            border: none;
+            padding: 10px;
+            width: 50px;
+            height: 50px;
+        }
+        .gray button{
+            background-color: aliceblue;
+        }
+        .gray button{
+            background-color: aliceblue;
+        }
+        .result-box input{
+            width: 95%;
+            border: none;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0px 1px 1px #dadada;
+        }
+    </style>
 </head>
 <body>
+
+    <div class="calculator">
+        <!-- result -->
+        <div class="result-box">
+            <input type="text" name="result" id="result" readonly value="0">
+        </div>
+
+        <div class="row gray">
+            <button>%</button>
+            <button>/</button>
+            <button>CE</button>
+            <button style="background-color: black; color: white;">C</button>
+        </div>
+
+        <div class="row ">
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button style="background-color: red; color: white;">-</button>
+        </div>
+
+        <div class="row">
+            <button>4</button>
+            <button>4</button>
+            <button>6</button>
+            <button style="background-color: blue; color: white;">*</button>
+        </div>
+
+
+        <div class="row">
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button style="background-color: goldenrod; color: white;">x</button>
+        </div>
+
+        <div class="row">
+            <button>.</button>
+            <button>0</button>
+            <button style="background-color: aqua;">=</button>
+            <button style="background-color: green; color: white;">+</button>
+        </div>
+    </div>
     
     <script src="./app.js"></script>
 </body>

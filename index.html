@@ -21,7 +21,7 @@
             padding: 3% 2%;
             margin: auto;
             height: 76%;
-            width: 30%;
+            width: 300px;
         }.row{
             gap: 10px;
             display: flex;
@@ -42,30 +42,34 @@
             background-color: aliceblue;
         }
         .row button:hover{
-            background-color: rgb(9, 4, 4);
-            color: white;
+            background-color:lightblue;
+            /* color: white; */
         }
         .result-box{
             display: flex;
             width: 100%;
-            height: 60px;
+            height: 40px;
             position: relative;
+            margin-top: 30px;
             align-items: center;
             justify-content: space-between;
         }
         .result-box input{
             width: 91%;
+            height: 40%;
             border: none;
             padding: 15px;
             font-size: 25px;
             text-align: right; 
             border-radius: 10px;
-            margin-bottom: 20px;
+            margin-bottom: 40px;
             border: 1px solid #dadada;
         }
         .history-icon{
             position: absolute;
             left: 10px;
+            top: -10px;
+            color: gray;
         }
     </style>
 </head>
@@ -81,39 +85,39 @@
         </div>
 
         <div class="row gray">
-            <button>%</button>
-            <button>/</button>
-            <button>CE</button>
-            <button style="background-color: black; color: white;">C</button>
+            <button onclick="opr('%')">%</button>
+            <button onclick="opr('/')">÷</button>
+            <button onclick="clearSingleChar()">CE</button>
+            <button style="background-color: black; color: white;" onclick="clear()">C</button>
         </div>
 
         <div class="row ">
-            <button>7</button>
-            <button>8</button>
-            <button>9</button>
-            <button style="background-color: tomato; color: white;">-</button>
+            <button onclick="number(7)">7</button>
+            <button onclick="number(8)">8</button>
+            <button onclick="number(9)">9</button>
+            <button  onclick="opr('-')" style="background-color: tomato; color: white;">-</button>
         </div>
 
         <div class="row">
-            <button>4</button>
-            <button>4</button>
-            <button>6</button>
-            <button style="background-color: blue; color: white;">*</button>
+            <button onclick="number(4)">4</button>
+            <button onclick="number(5)">5</button>
+            <button onclick="number(6)">6</button>
+            <button  onclick="opr('/')" style="background-color: blue; color: white;">√</button>
         </div>
 
 
         <div class="row">
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
-            <button style="background-color: goldenrod; color: white;">x</button>
+            <button onclick="number(1)">1</button>
+            <button onclick="number(2)">2</button>
+            <button onclick="number(3)">3</button>
+            <button onclick="opr('*')" style="background-color: goldenrod; color: white;">x</button>
         </div>
 
         <div class="row">
-            <button>.</button>
-            <button>0</button>
-            <button style="background-color: aqua;">=</button>
-            <button style="background-color: green; color: white;">+</button>
+            <button  onclick="opr('.')">.</button>
+            <button  onclick="number(0)">0</button>
+            <button onclick="outputCalcu()" style="background-color: aqua;">=</button>
+            <button  onclick="opr('+')" style="background-color: green; color: white;">+</button>
         </div>
     </div>
     

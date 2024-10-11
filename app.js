@@ -21,7 +21,7 @@ function outputCalcu() {
         document.getElementById("result").value = result; 
     }
 }
-document.getElementById("result").value = ""; 
+// document.getElementById("result").value = ""; 
 
 function clearSingleChar(){
     characterDisplay = characterDisplay.slice(0, -1)

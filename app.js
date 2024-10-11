@@ -22,3 +22,12 @@ function outputCalcu() {
     }
 }
 document.getElementById("result").value = ""; 
+
+function clearSingleChar(){
+    characterDisplay = characterDisplay.slice(0, -1)
+document.getElementById("result").value = characterDisplay; 
+}
+
+function clearHoleCal(){
+document.getElementById("result").value = "0"; 
+}

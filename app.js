@@ -8,9 +8,9 @@ function number(num){
 
 function opr(opr){
     if(isNaN(characterDisplay.slice(-1))){
-        characterDisplay = characterDisplay.slice(0, -1)
-        
+        characterDisplay = characterDisplay.slice(0, -1)        
     }
+
     characterDisplay += opr;
     document.getElementById("result").value = characterDisplay; 
 }

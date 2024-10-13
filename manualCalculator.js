@@ -1,5 +1,4 @@
 var characterDisplay = "";
-var oprStore = "";
 
 function number(num) {
     characterDisplay += num;
@@ -8,11 +7,10 @@ function number(num) {
 
 function opr(opr) {
     if (!isNaN(characterDisplay[0])) {
-        if (isNaN(characterDisplay.slice(-1))) {
-            characterDisplay = characterDisplay.slice(0, -1); // Remove last operator if present
+        if (isNaN(characterDisplay.slice(-2, -1))) {
+            characterDisplay = characterDisplay.slice(0, -3);
         }
-        characterDisplay += " " + opr + " "; // Add spaces around operator
-        oprStore += opr; // Store operator
+        characterDisplay += " " + opr + " "; 
         document.getElementById("result").value = characterDisplay; 
     } else {
         alert('first enter any numeric value');
@@ -25,19 +23,29 @@ function outputCalcu() {
     
     for(var i = 0; i < charArray.length; i++){
             if(charArray[i] === '/'){
-                resultDisplay = (charArray[i-1] / charArray[i+1]).toFixed()
+                resultDisplay = (Number(charArray[i-1]) / Number(charArray[i+1])).toFixed(1)
                 charArray.splice(i-1, 3,resultDisplay.toString())
-
+                i--
             }
+            else if(charArray[i] === '*'){
+                resultDisplay = (Number(charArray[i-1]) * Number(charArray[i+1])).toFixed(1)
+                charArray.splice(i-1, 3,resultDisplay.toString())
+                i--
+        }       
     }
     
     for(var i = 0; i < charArray.length; i++){
-        if(charArray[i] === '*'){
-            resultDisplay = (charArray[i-1]*charArray[i+1]).toFixed()
-            charArray.splice(i-1, 3,resultDisplay.toString())
+        if(charArray[i] === '+'){
+            resultDisplay = (Number(charArray[i-1]) + Number(charArray[i+1])).toFixed(1);
+            charArray.splice(i-1, 3,resultDisplay.toString());
+            i--; 
+        } else if (charArray[i] === '-') {
+            resultDisplay = (Number(charArray[i-1]) - Number(charArray[i+1])).toFixed(1);
+            charArray.splice(i-1, 3,resultDisplay.toString());
+            i--; 
     }
-}
     console.log('this is final result:', charArray);
+}
 }
 
 function clearSingleChar() {

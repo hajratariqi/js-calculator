@@ -23,12 +23,12 @@ function outputCalcu() {
     
     for(var i = 0; i < charArray.length; i++){
             if(charArray[i] === '/'){
-                resultDisplay = (Number(charArray[i-1]) / Number(charArray[i+1])).toFixed(1)
+                resultDisplay = (Number(charArray[i-1]) / Number(charArray[i+1]))
                 charArray.splice(i-1, 3,resultDisplay.toString())
                 i--
             }
             else if(charArray[i] === '*'){
-                resultDisplay = (Number(charArray[i-1]) * Number(charArray[i+1])).toFixed(1)
+                resultDisplay = (Number(charArray[i-1]) * Number(charArray[i+1]))
                 charArray.splice(i-1, 3,resultDisplay.toString())
                 i--
         }       
@@ -36,15 +36,17 @@ function outputCalcu() {
     
     for(var i = 0; i < charArray.length; i++){
         if(charArray[i] === '+'){
-            resultDisplay = (Number(charArray[i-1]) + Number(charArray[i+1])).toFixed(1);
+            resultDisplay = (Number(charArray[i-1]) + Number(charArray[i+1]));
             charArray.splice(i-1, 3,resultDisplay.toString());
             i--; 
         } else if (charArray[i] === '-') {
-            resultDisplay = (Number(charArray[i-1]) - Number(charArray[i+1])).toFixed(1);
+            resultDisplay = (Number(charArray[i-1]) - Number(charArray[i+1]));
             charArray.splice(i-1, 3,resultDisplay.toString());
             i--; 
     }
     console.log('this is final result:', charArray);
+    document.getElementById("result").value = charArray; 
+
 }
 }
 

@@ -10,6 +10,7 @@ function opr(opr) {
         if (isNaN(characterDisplay.slice(-2, -1))) {
             characterDisplay = characterDisplay.slice(0, -3);
         }
+        
         characterDisplay += " " + opr + " "; 
         document.getElementById("result").value = characterDisplay; 
     } else {
@@ -44,9 +45,8 @@ function outputCalcu() {
             charArray.splice(i-1, 3,resultDisplay.toString());
             i--; 
     }
-    console.log('this is final result:', charArray);
+    characterDisplay = charArray
     document.getElementById("result").value = charArray; 
-
 }
 }
 
